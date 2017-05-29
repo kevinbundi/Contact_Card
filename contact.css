@@ -1,0 +1,20 @@
+*{
+	/*border: 1px solid gray;*/
+	/*margin: 0px;*/
+}
+div.container{
+	border: 1px solid black;
+}
+	div.container .col-md-6{
+		height: auto;
+	}
+
+	div.container .col-md-12{
+		height: 100px;
+
+	}
+		div.container .col-md-6 .form-group button{
+			width: 60%;
+			position:relative;
+			left:20%;
+		} 

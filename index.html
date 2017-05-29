@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="../bootstrap.css">
+	<link rel="stylesheet" type="text/css" href="contact.css">
+	<script src="../jquery.js"></script>
+	<script>
+		$(document).ready(function(){
+			//extract values from the input fields and store them to variables 
+			$('form').submit(function(){
+			var first = $('#1').val()
+			var last = $('#2').val()
+			var desc = $('#3').val()
+			//append dynanmically created div to DOM 
+				$('#right').append("<div class='col-md-12'><h4>" + first + ' ' + last + "</h4><p>" + 'click for description' + "</p></div>")
+				return false; 
+			}) 
+			//use .on() to add event handlers to dynamically rendered HTML
+			$(document).on('click','.col-md-12',function(){
+				$(this).html("<p>" + $('#3').val() + "</p>")
+			})
+		})  
+	</script>
+</head>
+<body>
+	<div class="container">
+		<div class="col-md-6">
+			<form action="#" method="post">
+				<div class="form-group">
+					<div class="form-group">
+						<label for="exampleInputFirstName">First Name</label>
+						<input type="text" name="first_name" class="form-control" id="1">
+					</div>
+					<div class="form-group">
+						<label for="exampleInputLastName">Last Name</label>
+						<input type="text" name="last_name" class="form-control" id="2">
+					</div>
+					<div class="form-group">
+						<label for="exampleDescription">Description</label>
+						<textarea class="form-control" id="3" value="Click for description"></textarea>
+					</div>
+					<button class="btn btn-primary">Add User</button>
+				</div>
+			</form>
+		</div>
+		<div class="col-md-6">
+			<div id="right"></div>
+		</div>
+	</div>
+</body>
+</html>
