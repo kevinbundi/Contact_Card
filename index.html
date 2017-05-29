@@ -12,8 +12,11 @@
 			var first = $('#1').val()
 			var last = $('#2').val()
 			var desc = $('#3').val()
-			//append dynanmically created div to DOM 
+				//append dynanmically created div to DOM 
 				$('#right').append("<div class='col-md-12'><h4>" + first + ' ' + last + "</h4><p>" + 'click for description' + "</p></div>")
+				//clear form fields by setting value to empty
+				$('#1').val("")
+				$('#2').val("")
 				return false; 
 			}) 
 			//use .on() to add event handlers to dynamically rendered HTML
